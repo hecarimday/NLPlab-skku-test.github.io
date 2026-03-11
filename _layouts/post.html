@@ -24,20 +24,52 @@ layout: default
   </div>
 
   <!-- POST NAVIGATION -->
-  <div class="postNav clearfix">
-    {% if page.previous.url %} 
-      <a class="prev{% if page.previous.image %} image{% endif %}" href="{{ page.previous.url | prepend: site.baseurl }}"><span>&laquo;&nbsp;{{ page.previous.title }}</span>
-      {% if page.previous.image %} 
-        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.previous.image }}" alt="">
-      {% endif %}
-    </a>
-    {% endif %}  
-    {% if page.next.url %}  
-      <a class="next{% if page.next.image %} image{% endif %}" href="{{ page.next.url | prepend: site.baseurl }}"><span>{{ page.next.title }}&nbsp;&raquo;</span>
-      {% if page.next.image %} 
-        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.next.image }}" alt="">
-      {% endif %} 
+    <style>
+    .board-footer { margin-top: 50px; font-family: 'Malgun Gothic', sans-serif; }
+    
+    /* 이전글/다음글 리스트 */
+    .nav-list { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; list-style: none; padding: 0; margin: 0; }
+    .nav-item { display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee; text-decoration: none; color: #333; transition: background 0.2s; }
+    .nav-item:last-child { border-bottom: none; }
+    .nav-item:hover { background-color: #f9f9f9; }
+    
+    .nav-label { width: 100px; color: #666; font-size: 0.95em; display: flex; align-items: center; }
+    .nav-label i { margin-right: 10px; font-size: 12px; color: #999; }
+    .nav-title { flex: 1; font-size: 0.95em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* 하단 버튼 영역 */
+    .footer-btns { display: flex; justify-content: space-between; margin-top: 20px; }
+    .btn-base { padding: 8px 18px; border: 1px solid #ccc; background: #fff; color: #333; text-decoration: none; font-size: 0.9em; cursor: pointer; transition: 0.2s; }
+    .btn-base:hover { background: #f5f5f5; border-color: #999; }
+    .btn-dark { background: #333; color: #fff; border-color: #333; }
+    .btn-dark:hover { background: #000; }
+  </style>
+
+  <div class="board-footer">
+    <div class="nav-list">
+      {% if page.previous %}
+      <a href="{{ page.previous.url | prepend: site.baseurl }}" class="nav-item">
+        <span class="nav-label">▲ 이전글</span>
+        <span class="nav-title">{{ page.previous.title }}</span>
       </a>
-    {% endif %} 
+      {% endif %}
+
+      {% if page.next %}
+      <a href="{{ page.next.url | prepend: site.baseurl }}" class="nav-item">
+        <span class="nav-label">▼ 다음글</span>
+        <span class="nav-title">{{ page.next.title }}</span>
+      </a>
+      {% endif %}
+    </div>
+
+    <div class="footer-btns">
+      <div class="left-btn">
+        <a href="{{ '/Boards/notice.html' | prepend: site.baseurl }}" class="btn-base">≡ 목록</a>
+      </div>
+      <div class="right-btns">
+        <a href="https://github.com/{{ site.github_username }}/{{ site.github_repo }}/edit/main/{{ page.path }}" target="_blank" class="btn-base btn-dark">수정</a>
+        <a href="#" class="btn-base" onclick="alert('게시글 삭제는 GitHub 저장소에서 직접 파일을 제거해야 합니다.'); return false;">삭제</a>
+      </div>
+    </div>
   </div>
 </div>
