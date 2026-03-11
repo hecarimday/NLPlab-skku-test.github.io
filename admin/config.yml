@@ -2,6 +2,7 @@ backend:
   name: github
   repo: hecarimday/hecarimday.github.io # 예: hecarimday/hecarimday.github.io
   branch: main # 혹은 master
+  stide_id: "05fba26d-e0c1-4cf6-b175-354d90f7d367"
 
 media_folder: "assets/img" # 사진이 저장될 경로
 public_folder: "/assets/img" # 웹사이트에서 사진을 불러올 경로
