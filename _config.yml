@@ -30,8 +30,13 @@ navigation:
 #    url: "https://www.linkedin.com/company/skku-nlplab/posts/?feedView=all"
 #  - title: Apply
 #    url: "https://forms.gle/bdW4K2uYqvteRWfX7"
- #- title: Boards
- #  url: /Boards/notice/
+# 일단 테스트 하기 좋게 각 섹션들을 모두 추가 
+ - title: Boards
+   url: /Boards/notice/
+ - title: Papers
+   url: /Boards/paper/
+ - title: Links
+   url: /Boards/link/
  #- title: Courses
  #  url: /Courses/openingcourses 
  #- title: Software
