@@ -13,10 +13,10 @@ title: Introduction
             <li>Introduction(here)
             </li>
             <li class="post-link">
-                <a class="post-title" href="https://nlplab-skku-test.github.io/AboutUs/Photos/">Photos</a>
+                <a class="post-title" href="https://nlplab-skku.github.io/AboutUs/Photos/">Photos</a>
             </li>
             <li class="post-link">
-                <a class="post-title" href="https://nlplab-skku-test.github.io/AboutUs/ContactUs/">Contact Us</a>
+                <a class="post-title" href="https://nlplab-skku.github.io/AboutUs/ContactUs/">Contact Us</a>
             </li>
           </ul>
   </div>

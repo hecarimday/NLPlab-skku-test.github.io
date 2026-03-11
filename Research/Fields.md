@@ -52,10 +52,10 @@ title: Fields
             <li>Fields(here)
             </li>
             <li class="post-link">
-                <a class="post-title" href="https://nlplab-skku-test.github.io/Research/Projects/">Projects</a>
+                <a class="post-title" href="https://nlplab-skku.github.io/Research/Projects/">Projects</a>
             </li>
             <li class="post-link">
-                <a class="post-title" href="https://nlplab-skku-test.github.io/Research/Patents/">Patents</a>
+                <a class="post-title" href="https://nlplab-skku.github.io/Research/Patents/">Patents</a>
             </li>
           </ul>
   </div>
@@ -78,9 +78,9 @@ title: Fields
 
   <div class="toggle-container" onclick="toggleList_github1()">> Related Github</div>
   <ul class="toggle-list" id="github-list1">
-      <li><a href="https://github.com/NLPlab-skku-test/HG-TODS" target="_blank">이종 그래프 융합 목적 지향 대화 시스템</a></li>
-      <li><a href="https://github.com/NLPlab-skku-test/DSTC11_SIMMC2.1" target="_blank">가상환경 쇼핑 보조를 위한 대화형 인공지능 에이전트</a></li>
-      <li><a href="https://github.com/NLPlab-skku-test/BERT-ASE" target="_blank">Gender bias 완화 모델 BERT-ASE</a></li>
+      <li><a href="https://github.com/NLPlab-skku/HG-TODS" target="_blank">이종 그래프 융합 목적 지향 대화 시스템</a></li>
+      <li><a href="https://github.com/NLPlab-skku/DSTC11_SIMMC2.1" target="_blank">가상환경 쇼핑 보조를 위한 대화형 인공지능 에이전트</a></li>
+      <li><a href="https://github.com/NLPlab-skku/BERT-ASE" target="_blank">Gender bias 완화 모델 BERT-ASE</a></li>
   </ul>
 
   <div class="toggle-container" onclick="toggleList_demo1()">> Related Demo</div>
@@ -138,8 +138,8 @@ title: Fields
 
   <div class="toggle-container" onclick="toggleList_github2()">> Related Github</div>
   <ul class="toggle-list" id="github-list2">
-      <li><a href="https://github.com/NLPlab-skku-test/SummaryXAI-QA" target="_blank">설명가능한 오픈도메인 질의응답 시스템</a></li>
-      <li><a href="https://github.com/NLPlab-skku-test/NLPLAB_KoDPR" target="_blank">한국어 검색 데이터셋 DPR</a></li>
+      <li><a href="https://github.com/NLPlab-skku/SummaryXAI-QA" target="_blank">설명가능한 오픈도메인 질의응답 시스템</a></li>
+      <li><a href="https://github.com/NLPlab-skku/NLPLAB_KoDPR" target="_blank">한국어 검색 데이터셋 DPR</a></li>
   </ul>
 
   <div class="toggle-container" onclick="toggleList_demo2()">> Related Demo</div>
@@ -220,7 +220,7 @@ title: Fields
 
   <div class="toggle-container" onclick="toggleList_github5()">> Related Github</div>
   <ul class="toggle-list" id="github-list5">
-      <li><a href="https://github.com/NLPlab-skku-test/SummaryXAI-QA/tree/main/QSG-Transformer" target="_blank">QSG Transformer</a></li>
+      <li><a href="https://github.com/NLPlab-skku/SummaryXAI-QA/tree/main/QSG-Transformer" target="_blank">QSG Transformer</a></li>
   </ul>
 
   <div class="toggle-container" onclick="toggleList_demo5()">> Related Demo</div>
@@ -270,7 +270,7 @@ title: Fields
 
   <div class="toggle-container" onclick="toggleList_github7()">> Related Github</div>
   <ul class="toggle-list" id="github-list7">
-      <li><a href="https://github.com/NLPlab-skku-test/RoSeLLa" target="_blank">한국어 기반 소형 언어 모델(sLM) RoSeLLa</a></li>
+      <li><a href="https://github.com/NLPlab-skku/RoSeLLa" target="_blank">한국어 기반 소형 언어 모델(sLM) RoSeLLa</a></li>
   </ul>
 
   <div class="toggle-container" onclick="toggleList_demo7()">> Related Demo</div>

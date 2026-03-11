@@ -11,10 +11,10 @@ title: Patents
  <div class="linklink jg" style = "background-color:#ffffff;border-radius:0 15px">
           <ul class="posts-list">
             <li class="post-link">
-                <a class="post-title" href="https://nlplab-skku-test.github.io/Research/Fields/">Fields</a>
+                <a class="post-title" href="https://nlplab-skku.github.io/Research/Fields/">Fields</a>
             </li>
             <li class="post-link">
-                <a class="post-title" href="https://nlplab-skku-test.github.io/Research/Projects/">Projects</a>
+                <a class="post-title" href="https://nlplab-skku.github.io/Research/Projects/">Projects</a>
             </li>
             <li>Patents(here)
             </li>
