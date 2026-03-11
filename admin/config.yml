@@ -14,8 +14,8 @@ backend:
 
 # 2. 미디어 설정 (에러의 원인이었던 필수값들!)
 # 글 쓸 때 업로드하는 사진들이 저장될 경로입니다.
-media_folder: "assets/images/posts"
-public_folder: "/assets/images/posts"
+media_folder: "assets/board/post"
+public_folder: "/assets/board/post"
 
 # 3. 게시판(Notice) 설정
 collections:
