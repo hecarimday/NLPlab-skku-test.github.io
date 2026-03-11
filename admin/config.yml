@@ -19,6 +19,23 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      # 1. 레이아웃: 보통 'post'로 고정이니 숨겨진 필드로 자동 입력되게 합니다.
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      
+      # 2. 제목
       - { label: "Title", name: "title", widget: "string" }
+      
+      # 3. 날짜
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      
+      # 4. 요약 설명: 목록에서 보여줄 짧은 설명입니다.
+      - { label: "Description", name: "description", widget: "text" }
+      
+      # 5. 작성자: 기본값을 지정해두면 편리합니다.
+      - { label: "Author", name: "author", widget: "string", default: "박진석" }
+      
+      # 6. 카테고리: 'notice'로 고정하거나 직접 입력합니다.
+      - { label: "Category", name: "category", widget: "string", default: "notice" }
+      
+      # 7. 본문
       - { label: "Body", name: "body", widget: "markdown" }
