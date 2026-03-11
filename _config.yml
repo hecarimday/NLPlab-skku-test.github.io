@@ -1,0 +1,48 @@
+title: NLPLAB
+description: SKK Univ. NLP LAB.
+
+url: "https://nlplab-skku-test.github.io/"
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+gems: [jekyll-paginate]
+paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: About Us
+   url: /AboutUs/Introduction/
+ - title: Research
+   url: /Research/Fields/
+ - title: Publications
+   url: /Publications/JournalPapers/
+ - title: Members
+   url: /Members/
+ - title: Demos
+   url: /Demos/Natural_Language_Processing/
+#  - title: GitHub
+#    url: "https://github.com/NLPlab-skku-test"
+#  - title: LinkedIn
+#    url: "https://www.linkedin.com/company/skku-nlplab/posts/?feedView=all"
+#  - title: Apply
+#    url: "https://forms.gle/bdW4K2uYqvteRWfX7"
+ #- title: Boards
+ #  url: /Boards/notice/
+ #- title: Courses
+ #  url: /Courses/openingcourses 
+ #- title: Software
+ #  url: /Software/languageanalysissoftware/ --> 
+
+social:
+   github: "https://github.com/NLPlab-skku-test"
+   linkedin: "https://www.linkedin.com/company/skku-nlplab/posts/?feedView=all"  # <--- 이 줄을 추가!
+   apply: "https://forms.gle/bdW4K2uYqvteRWfX7"
+   #twitter: brianmaierjr
+   #facebook: brianmaierjr
+   email: nlplab.skku@gmail.com
+
+google_analytics: "UA-58263416-1"
