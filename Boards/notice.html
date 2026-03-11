@@ -31,32 +31,60 @@ title: notice
     <p class="meta">연구실 주요 소식</p>
 </div>
 
-<table class="board-table">
-    <thead>
-        <tr>
-            <th width="10%">No.</th>
-            <th width="60%">제목</th>
-            <th width="15%">작성일</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% assign notice_posts = site.posts | where: "category", "notice" %}
-        {% for post in notice_posts %}
-        <tr>
-            <td>{{ forloop.rindex }}</td>
-            <td class="title-cell">
-                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
-                {% capture post_date %}{{post.date | date: '%s'}}{% endcapture %}
-                {% assign diff = now | minus: post_date %}
-                {% if diff < 604800 %}<span class="new-badge">NEW</span>{% endif %} 
-            </td>
-            <td>{{ post.date | date: "%Y-%m-%d" }}</td>
-        </tr>
-        {% else %}
-        <tr>
-            <td colspan="3">등록된 공지사항이 없습니다.</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<style>
+    .skku-board-list { border-top: 2px solid #333; margin-top: 20px; }
+    .skku-item { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 20px 10px; 
+        border-bottom: 1px solid #eee; 
+        text-decoration: none; 
+        color: #333;
+    }
+    .skku-item:hover { background-color: #fcfcfc; }
+    
+    .skku-content { flex: 1; }
+    .skku-title { font-size: 1.1em; font-weight: 500; margin-bottom: 8px; display: block; }
+    .skku-meta { font-size: 0.85em; color: #888; display: flex; align-items: center; }
+    .skku-meta span { margin-right: 10px; }
+    .skku-meta .divider { margin-right: 10px; color: #ddd; }
+
+    .skku-right { display: flex; align-items: center; }
+    .new-tag { color: #ff6600; font-weight: bold; font-size: 0.8em; margin-right: 20px; }
+    .download-box { 
+        width: 35px; height: 35px; 
+        border: 1px solid #ddd; 
+        display: flex; justify-content: center; align-items: center;
+        color: #888; font-size: 1.2em;
+    }
+</style>
+
+<div class="skku-board-list">
+    {% assign notice_posts = site.posts | where: "category", "notice" %}
+    {% for post in notice_posts %}
+    <a href="{{ post.url | prepend: site.baseurl }}" class="skku-item">
+        <div class="skku-content">
+            <span class="skku-title">{{ post.title }}</span>
+            <div class="skku-meta">
+                <span>No.{{ forloop.rindex }}</span>
+                <span class="divider">|</span>
+                <span>{{ post.author | default: "연구실" }}</span>
+                <span class="divider">|</span>
+                <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+            </div>
+        </div>
+        
+        <div class="skku-right">
+            {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
+            {% capture post_date %}{{post.date | date: '%s'}}{% endcapture %}
+            {% assign diff = now | minus: post_date %}
+            {% if diff < 604800 %}<span class="new-tag">NEW</span>{% endif %}
+            
+            <div class="download-box">↓</div>
+        </div>
+    </a>
+    {% else %}
+    <div style="padding: 50px; text-align: center; color: #999;">등록된 공지사항이 없습니다.</div>
+    {% endfor %}
+</div>
