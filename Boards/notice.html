@@ -75,14 +75,14 @@ title: notice
             </div>
         </div>
         
-        <div class="skku-right">
+        <!--<div class="skku-right">
             {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
             {% capture post_date %}{{post.date | date: '%s'}}{% endcapture %}
             {% assign diff = now | minus: post_date %}
             {% if diff < 604800 %}<span class="new-tag">NEW</span>{% endif %}
             
             <div class="download-box">↓</div>
-        </div>
+        </div>-->
     </a>
     {% else %}
     <div style="padding: 50px; text-align: center; color: #999;">등록된 공지사항이 없습니다.</div>
