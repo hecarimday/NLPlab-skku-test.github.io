@@ -5,6 +5,12 @@ backend:
   branch: main
   base_url: https://sweet-genie-b1cd1b.netlify.app
   site_id: 05fba26d-e0c1-4cf6-b175-354d90f7d367
+  commit_messages:
+    create: "feat(notice): 새 공지사항 작성 - {{slug}}"
+    update: "docs(notice): 공지사항 수정 - {{slug}}"
+    delete: "refactor(notice): 공지사항 삭제 - {{slug}}"
+    uploadMedia: "asset(media): 파일 업로드 - {{path}}"
+    deleteMedia: "refactor(media): 파일 삭제 - {{path}}"
 
 # 2. 미디어 설정 (에러의 원인이었던 필수값들!)
 # 글 쓸 때 업로드하는 사진들이 저장될 경로입니다.
