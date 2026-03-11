@@ -2,15 +2,26 @@
 layout: default
 ---
 <div class="post">
-  {% if page.image %}
-    <div class="featuredImage">
-        <img src="{{ '/assets/img/' | prepend: site.baseurl | append: page.image }}" alt="" />
+  <div class="post-header-container" style="border-top: 2px solid #333; border-bottom: 1px solid #ddd; padding: 20px 0; margin-bottom: 30px; background-color: #fcfcfc;">
+    <div style="padding: 0 20px;">
+      <h1 class="postTitle" style="margin-bottom: 15px; font-size: 1.5em; color: #000;">
+        {{ page.title }}
+      </h1>
+      
+      <div class="post-meta" style="display: flex; justify-content: space-between; color: #666; font-size: 0.9em;">
+        <div>
+          <span>작성자: {{ page.author | default: "연구실 관리자" }}</span>
+        </div>
+        <div>
+          <span>작성일: {{ page.date | date: "%Y.%m.%d" }}</span>
+        </div>
       </div>
-  {% endif %}
-  <!--<h1 class="postTitle">{{ page.title }}</h1>
-  <!--<p class="meta">소개</p>-->
-  
-  {{ content }}
+    </div>
+  </div>
+
+  <div class="post-content" style="padding: 0 20px; line-height: 1.8;">
+    {{ content }}
+  </div>
 
   <!-- POST NAVIGATION -->
   <div class="postNav clearfix">

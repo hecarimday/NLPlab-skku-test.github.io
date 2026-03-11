@@ -2,6 +2,7 @@
 layout: post
 title:  "Image in Post"
 date:   2014-12-11
+author: "박진석"
 category: notice
 ---
 

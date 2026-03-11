@@ -3,6 +3,7 @@ layout: post
 title:  "Featured Image"
 date:   2014-12-14
 image: touring.jpg
+author: "박진석"
 category: notice
 ---
 
