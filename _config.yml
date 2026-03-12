@@ -6,7 +6,7 @@ baseurl: ""
 # [수정] 중복된 paginate_path와 paginate를 하나로 정리합니다.
 # 지킬 기본 페이징(v1)은 사이트 내 '딱 한 곳'만 타겟팅할 수 있습니다.
 paginate: 10
-paginate_path: "/notice/page:num/"
+paginate_path: "/Boards/notice/page:num/"
 
 markdown: kramdown
 highlighter: rouge
