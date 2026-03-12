@@ -11,7 +11,7 @@ paginate_path: "/Boards/notice/page:num/"
 markdown: kramdown
 highlighter: rouge
 
-# [수정] gems 대신 최신 규격인 plugins 하나만 사용하세요.
+# [수정] gems 대신 최신 규격인 plugins 하나만 사용하세요. 
 plugins:
   - jekyll-paginate
 
