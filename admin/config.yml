@@ -45,3 +45,9 @@ collections:
       
       # 7. 본문
       - { label: "Body", name: "body", widget: "markdown" }
+
+plugins:
+  - jekyll-paginate
+
+paginate: 10              # 한 페이지에 보여줄 글 수
+paginate_path: "/notice/page:num/"  # 페이지 주소 형식
