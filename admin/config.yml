@@ -1,53 +1,24 @@
-# 1. 백엔드 설정 (인증 관련)
-backend:
-  name: git-gateway
-  repo: hecarimday/hecarimday.github.io
-  branch: main
-  base_url: https://sweet-genie-b1cd1b.netlify.app
-  site_id: 05fba26d-e0c1-4cf6-b175-354d90f7d367
-  commit_messages:
-    create: "feat(notice): 새 공지사항 작성 - {{slug}}"
-    update: "docs(notice): 공지사항 수정 - {{slug}}"
-    delete: "refactor(notice): 공지사항 삭제 - {{slug}}"
-    uploadMedia: "asset(media): 파일 업로드 - {{path}}"
-    deleteMedia: "refactor(media): 파일 삭제 - {{path}}"
+# 사이트 전역 설정
+title: "NLP Lab Notice"
+description: "연구실 주요 소식 및 공지사항"
+url: "https://hecarimday.github.io" 
+baseurl: "" # 주소 뒤에 경로가 더 있다면 수정이 필요하지만, 보통 비워둡니다.
 
-# 2. 미디어 설정 (에러의 원인이었던 필수값들!)
-# 글 쓸 때 업로드하는 사진들이 저장될 경로입니다.
-media_folder: "assets/board/post"
-public_folder: "/assets/board/post"
-
-# 3. 게시판(Notice) 설정
-collections:
-  - name: "notice"
-    label: "Notice"
-    folder: "_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      # 1. 레이아웃: 보통 'post'로 고정이니 숨겨진 필드로 자동 입력되게 합니다.
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      
-      # 2. 제목
-      - { label: "Title", name: "title", widget: "string" }
-      
-      # 3. 날짜
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      
-      # 4. 요약 설명: 목록에서 보여줄 짧은 설명입니다.
-      - { label: "Description", name: "description", widget: "text" }
-      
-      # 5. 작성자: 기본값을 지정해두면 편리합니다.
-      - { label: "Author", name: "author", widget: "string", default: "박진석" }
-      
-      # 6. 카테고리: 'notice'로 고정하거나 직접 입력합니다.
-      - { label: "Category", name: "category", widget: "string", default: "notice" }
-      
-      # 7. 본문
-      - { label: "Body", name: "body", widget: "markdown" }
-
+# 1. 플러그인 설정 (이 부분이 있어야 paginator가 작동합니다)
 plugins:
   - jekyll-paginate
 
-paginate: 10              # 한 페이지에 보여줄 글 수
-paginate_path: "/notice/page:num/"  # 페이지 주소 형식
+# 2. 페이지네이션 상세 설정
+paginate: 10
+paginate_path: "/notice/page:num/" # 공지사항 목록 파일이 있는 경로와 맞춰야 합니다.
+
+# 3. 빌드 설정
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .jekyll-cache
+  - .sass-cache
