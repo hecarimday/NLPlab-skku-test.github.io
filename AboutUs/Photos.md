@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Photos
+permalink: /AboutUs/Photos/
 ---
 <style>
 	.center{
