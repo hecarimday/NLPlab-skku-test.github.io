@@ -93,29 +93,32 @@ async function executeSearch() {
   const target = document.getElementById('search-target').value;
   const keyword = document.getElementById('search-input').value.toLowerCase();
   
-  // 1. 데이터 가져오기 (전체 게시물)
-  const response = await fetch('{{ "/search.json" | relative_url }}');
-  const posts = await response.json();
+  try {
+    // 경로를 더 안전하게 절대 경로로 잡습니다.
+    const response = await fetch('{{ site.baseurl }}/search.json');
+    if (!response.ok) throw new Error('Network response was not ok');
+    const posts = await response.json();
 
-  // 2. 필터링 로직
-  allSearchResults = posts.filter(post => {
-    const matchCategory = (category === '전체' || post.category === category);
-    let matchKeyword = false;
+    allSearchResults = posts.filter(post => {
+      const matchCategory = (category === '전체' || post.category === category);
+      let matchKeyword = false;
 
-    if (target === '제목') matchKeyword = post.title.toLowerCase().includes(keyword);
-    else if (target === '내용') matchKeyword = post.content.toLowerCase().includes(keyword);
-    else if (target === '작성자') matchKeyword = post.author.toLowerCase().includes(keyword);
-    else {
-      matchKeyword = post.title.toLowerCase().includes(keyword) || 
-                     post.content.toLowerCase().includes(keyword) || 
-                     post.author.toLowerCase().includes(keyword);
-    }
-    return matchCategory && matchKeyword;
-  });
+      if (target === '제목') matchKeyword = post.title.toLowerCase().includes(keyword);
+      else if (target === '내용') matchKeyword = (post.content || "").toLowerCase().includes(keyword);
+      else if (target === '작성자') matchKeyword = (post.author || "").toLowerCase().includes(keyword);
+      else {
+        matchKeyword = post.title.toLowerCase().includes(keyword) || 
+                       (post.content || "").toLowerCase().includes(keyword) || 
+                       (post.author || "").toLowerCase().includes(keyword);
+      }
+      return matchCategory && matchKeyword;
+    });
 
-  // 3. 첫 페이지 보여주기
-  currentSearchPage = 1;
-  displayResults(currentSearchPage);
+    currentSearchPage = 1;
+    displayResults(currentSearchPage);
+  } catch (error) {
+    console.error("Error fetching or filtering posts:", error);
+  }
 }
 
 function displayResults(page) {
