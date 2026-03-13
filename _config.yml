@@ -13,7 +13,7 @@ highlighter: rouge
 
 # [수정] gems 대신 최신 규격인 plugins 하나만 사용하세요. 
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 navigation:
   - title: Home
