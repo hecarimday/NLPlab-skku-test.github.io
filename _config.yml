@@ -3,19 +3,16 @@ description: SKK Univ. NLP LAB.
 url: "https://hecarimday.github.io"
 baseurl: ""
 
-pagination:
-  enabled: true
-  collection: 'posts'
-  per_page: 10
-  permalink: '/page/:num/'
-  index_page_name: 'index.html'
-  
 markdown: kramdown
 highlighter: rouge
 
-# [수정] gems 대신 최신 규격인 plugins 하나만 사용하세요. 
+# [수정] 다시 기본 jekyll-paginate로 변경
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
+
+# [수정] v2 방식이 아닌 v1 방식으로 설정
+paginate: 10
+paginate_path: "/Boards/page:num/"
 
 navigation:
   - title: Home

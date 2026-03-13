@@ -1,11 +1,7 @@
 ---
 layout: default
 title: notice
-permalink: /Boards/notice/
-pagination: 
-  enabled: true
-  collection: posts
-  per_page: 10
+permalink: /Boards/
 ---
 
 <div class="post jg">
@@ -27,34 +23,33 @@ pagination:
   <div class="board-header-line" style="border-top: 2px solid #333;"></div>
   
   <ul class="post-list" style="list-style: none; padding: 0; margin: 0;">
-    {% assign posts_to_show = paginator.posts | default: site.posts %}
-    {% for post in posts_to_show %}
-    <li class="board-item" style="display: flex; align-items: center; padding: 20px 10px; border-bottom: 1px solid #eee; position: relative;">
+  {% for post in paginator.posts %}
+  <li class="board-item" style="display: flex; align-items: center; padding: 20px 10px; border-bottom: 1px solid #eee; position: relative;">
+    
+    <div class="item-main" style="flex: 1;">
+      <div style="margin-bottom: 10px;">
+        <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #333; font-size: 1.1em; line-height: 1.5;">
+          <span style="color: #666; margin-right: 5px;">[{{ post.category | default: "공지" }}]</span>
+          <span style="font-weight: 500;">{{ post.title }}</span>
+        </a>
+      </div>
       
-      <div class="item-main" style="flex: 1;">
-        <div style="margin-bottom: 10px;">
-          <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #333; font-size: 1.1em; line-height: 1.5;">
-            <span style="color: #666; margin-right: 5px;">[{{ post.category | default: "공지" }}]</span>
-            <span style="font-weight: 500;">{{ post.title }}</span>
-          </a>
-        </div>
-        
-        <div class="item-meta" style="font-size: 0.9em; color: #888; display: flex; gap: 15px;">
-          <span>No.{{ forloop.rindex }}</span> <span style="color: #ddd;">|</span>
-          <span>{{ post.author | default: "연구실" }}</span>
-          <span style="color: #ddd;">|</span>
-          <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        </div>
+      <div class="item-meta" style="font-size: 0.9em; color: #888; display: flex; gap: 15px;">
+        <span>No.{{ forloop.rindex }}</span> <span style="color: #ddd;">|</span>
+        <span>{{ post.author | default: "연구실" }}</span>
+        <span style="color: #ddd;">|</span>
+        <span>{{ post.date | date: "%Y-%m-%d" }}</span>
       </div>
+    </div>
 
-      <div class="item-side" style="display: flex; align-items: center; gap: 25px;">
-        {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
-        {% capture post_date %}{{post.date | date: '%s'}}{% endcapture %}
-        {% assign diff = now | minus: post_date %}
-        {% if diff < 259200 %} <span style="color: #ff6600; font-weight: bold; font-size: 0.85em; letter-spacing: 0.5px;">NEW</span>
-        {% endif %}
-        
-      </div>
+    <div class="item-side" style="display: flex; align-items: center; gap: 25px;">
+      {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
+      {% capture post_date %}{{post.date | date: '%s'}}{% endcapture %}
+      {% assign diff = now | minus: post_date %}
+      {% if diff < 259200 %} 
+        <span style="color: #ff6600; font-weight: bold; font-size: 0.85em; letter-spacing: 0.5px;">NEW</span>
+      {% endif %}
+    </div>
     </li>
     {% else %}
     <li style="text-align: center; padding: 80px 0; color: #999; border-bottom: 1px solid #eee;">등록된 게시물이 없습니다.</li>
